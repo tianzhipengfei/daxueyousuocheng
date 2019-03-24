@@ -1,0 +1,22 @@
+<!--pages/speciallist/speciallist.wxml-->
+<image style='width:3rem;height:3rem;position:fixed;right:2rem;bottom:2rem;z-index:10;' bindtap='back' src='../../img/return2.png' ></image>
+
+
+<!--表单页  -->
+<view class="page">
+    <view style='padding-top:15px;padding-bottom:15px;'>
+        <view class="page__title" style="padding-left:20px;">{{Special.heading}}     </view>
+         <view class="page__desc" style='padding-left:20px;padding-right:20px;'>机械工程与自动化学院2015级共有{{Special.num}}名{{Special.heading}}。</view> 
+    </view>
+    <view class="page__bd">        
+        <view class="weui-cells weui-cells_after-title">
+            <block wx:for="{{Special.name}}">
+              <navigator url="../ceshi/ceshi" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                  <view class="weui-cell__bd">{{Special.name[index]}}</view>
+                  <view class="weui-cell__bd">{{Special.type[index]}}</view>
+                  <view class="weui-cell__ft weui-cell__ft_in-access" data-studentnum='{{Special.studentnum[index]}}' bindtap='viewdetails'>查看详情</view>
+              </navigator>
+            </block>
+        </view>
+    </view>
+</view>

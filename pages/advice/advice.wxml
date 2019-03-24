@@ -1,0 +1,10 @@
+<!--pages/advice/advice.wxml-->
+<view id="infor_wrapper">
+  <view class="infor_row"> 
+    <view class="title"> 感谢您对本系统的使用，如果您在使用过程中遇到什么问题，或者您对本系统还有什么意见，请通过下方联系方式反馈给我哦！ </view>
+    <view id="icon">
+      <image src='/img/wechat.png' style='height:100rpx; width: 100rpx;'/>
+      <view> 1663063193 </view>
+    </view>
+  </view>
+</view>

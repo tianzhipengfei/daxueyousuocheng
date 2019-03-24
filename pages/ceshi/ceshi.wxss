@@ -1,0 +1,14 @@
+/* pages/ceshi/ceshi.wxss */
+.weui-form-preview{
+    margin-bottom: 25px;
+}
+
+.weui-tab__content{
+    padding-top: 60px;
+    text-align: center;
+}
+.textarea-wrp {
+    padding: 0 25rpx;
+    background-color: #fff;
+    
+}

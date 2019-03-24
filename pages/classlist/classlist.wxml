@@ -1,0 +1,18 @@
+<image style='width:3rem;height:3rem;position:fixed;right:2rem;bottom:2rem;z-index:10;' bindtap='back' src='../../img/return2.png' ></image>
+ <view class="page-body">
+ <view class="page__desc" style='padding:40rpx'>机械工程与自动化学院2015级共有{{totalnum}}名学生，其中女生{{girlnum}}名。</view> 
+    <view wx:for="{{classCategory}}">
+      <view class="kind-list-item-bd  kind-list-item-bd-show ">
+            <view class="navigator-box navigator-box-show ">
+                <navigator url="/pages/speciallist/speciallist" class="navigator">
+                  <view style='width:1.2em;height:1.2em;' src=''>{{index+1}}</view>
+                  <view class="navigator-text">{{item.message}}</view>
+                  <view style='margin-right:1rem;'>{{item.num}}人</view>
+                  <view class="navigator-arrow"></view>
+                </navigator>
+            </view>
+      </view>
+      <view class="qujian">
+      </view>
+  </view>  
+  </view> 

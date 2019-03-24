@@ -1,0 +1,76 @@
+<!-- 已发通知 -->
+<view wx:if="{{!newif}}">
+
+<!-- 通知动态 -->
+<view class='Notice'>
+  <view class='one-item' wx:for='{{noticeList}}' wx:key='{{index}}'  style='padding-bottom:20rpx;margin-bottom: 30rpx; border-bottom: 2rpx solid #ccc;'>
+    <view style='width:144rpx;text-align:center;padding-top:20rpx;'><image src='{{item.wx_pic}}' style='width: 75rpx; height: 75rpx; ' class='one-item-left'></image></view>
+    <view class='one-item-right'>
+      <view class='nickname'>{{item.wx_name}}</view>
+      <view class='content'>#<text style='font-weight: bold;'>{{item.n_title}}</text>#{{item.n_content}}</view>
+      <view class='photo-container' wx:if='{{item.n_pic.length}}'>
+          <!-- 图片点开可以预览 根据图片的多少可以自适应自动排列 -->
+          <image src="{{cell}}" style='width: 22vw; height: 22vw;' mode='scaleToFill' wx:for='{{item.n_pic}}' wx:for-item="cell" wx:for-index="cellindex" wx:key='{{cellindex}}' bindtap='previewImg' data-src='{{cell}}' data-n_id='{{item.n_id}}'></image>
+      </view>
+      <block wx:if="{{role==2}}"><i-icon type='trash' size='24' style='margin-left: 70vw;' bindtap='deleteNotice' data-n_id = '{{item.n_id}}'></i-icon></block>
+    </view>
+  </view>
+</view>
+
+</view>
+<!-- 新建通知 -->
+<image wx:if="{{!newif}}" style='width:3rem;height:3rem;position:fixed;right:2rem;bottom:2rem;z-index:999999999;' bindtap='newnotice' src='../../img/newNotice.png'></image>
+<view wx:if="{{newif}}">
+<image style='width:3rem;height:3rem;position:fixed;right:2rem;bottom:2rem;z-index:10;' bindtap='newnotice' src='../../img/return2.png'></image>
+        <view class="weui-cells__title">通知标题</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入通知标题(必填)"  bindinput='enterTitle' />
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-cells__title" bindinput='enterNotice'>通知内容</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" placeholder="请输入通知内容(必填)" style="height: 3.3em" maxlength='200'  bindinput='enterContent' />
+
+                    <view class="weui-textarea-counter"><text>{{enterContentNum}}</text>/200</view>
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells__title" style='margin-bottom:-0.8rem;'>图片上传</view>
+              <!-- <view class="page__bd"> -->
+                 <view class="weui-cells"> 
+                    <view class="weui-cell">
+                        <view class="weui-cell__bd">
+                            <view class="weui-uploader">
+                                <view class="weui-uploader__hd">
+                                    <!-- <view class="weui-uploader__title">图片上传</view> -->
+                                    <!-- <view class="weui-uploader__info">{{files.length}}/2</view> -->
+                                </view>
+                                <view class="weui-uploader__bd"  style='overflow: none!important'>
+                                    <view class="weui-uploader__files" id="uploaderFiles">
+                                        <block wx:for="{{files}}" wx:key="{{index}}">
+                                            <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}" style='position: relative;'>
+                                                <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" z-index='88888' />
+                                                <i-icon style='position: absolute; right: 0rpx; top: -2rpx; z-index: 99999999' type="delete"  size="24" data-src='{{item}}' catchtap='deleteImg'></i-icon>
+                                            </view>
+                                        </block>
+                                    </view>
+                                    <view class="weui-uploader__input-box">
+                                        <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                 </view> 
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="default" bindtap="openConfirm" style='color:#4A9BEA;border:solid 1px #4A9BEA;' >确认发布</button>
+        </view>             
+</view>
+
+        

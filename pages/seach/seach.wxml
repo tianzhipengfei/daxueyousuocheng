@@ -1,0 +1,76 @@
+<!--pages/seach/seach.wxml-->
+<view class="page">
+     <view class="page__hd">
+        <view class="page__title">全部学生搜索</view>
+        <!-- <view class="page__desc">搜索栏</view> -->
+    </view> 
+    <view class="page__bd">
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+        <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <view>实时搜索文本</view>
+                </view>
+            </navigator>
+            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <view>实时搜索文本</view>
+                </view>
+            </navigator>
+            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <view>实时搜索文本</view>
+                </view>
+            </navigator>
+            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <view>实时搜索文本</view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>
+<view class="page">
+    <view class="page__hd" >
+         <view class="page__title">特殊学生群体</view> 
+         <!-- <view class="page__desc">特殊学生群体</view>  -->
+    </view>
+    <view class="page__bd">
+        <view class="weui-grids">
+            <!-- <block wx:for="{{grids}}" wx:key="*this"> -->
+            <block wx:for="{{specialCategory}}">
+                <navigator url="../speciallist/speciallist?id={{index}}" class="weui-grid" hover-class="weui-grid_active">
+                    <image class="weui-grid__icon" src="../../img/{{item.path}}" />
+                    <view class="weui-grid__label">{{item.message}}</view>
+                </navigator>
+            </block> 
+        </view>
+    </view>
+</view>
+<view class="page">
+    <view class="page__hd" >
+         <view class="page__title">行政班级划分</view> 
+         <!-- <view class="page__desc">特殊学生群体</view>  -->
+    </view>
+      <!-- <view class="btn-area"> -->
+      <navigator style='margin-bottom:3rem;' url="../classlist/classlist" hover-class="navigator-hover">
+        <button type="default" style='color:#56A4EF'>班级信息查询</button>
+      </navigator>
+      
+    <!-- </view> -->
+</view> 

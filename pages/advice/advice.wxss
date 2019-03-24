@@ -1,0 +1,51 @@
+/* pages/advice/advice.wxss */
+#infor_wrapper{
+  display: flex;
+  flex-direction: column;
+  width: 750rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.infor_row{
+  width: 650rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
+  border-bottom: #e7eaed 2rpx solid;
+}
+
+.title{
+  width: 650rpx;
+  line-height: 80rpx;
+}
+
+.content{
+  height: 80rpx;
+  width: 45 0rpx;
+  line-height: 80rpx;
+}
+
+#advice_wrapper{
+  width: 650rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
+  border-bottom: #e7eaed 2rpx solid;
+}
+
+#advice_title{
+
+  height: 80rpx;
+  width: 650rpx;
+  line-height: 80rpx;
+}
+
+#icon{
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/Identity/Identity",
+    "pages/job/job",
+    "pages/seach/seach",
+    "pages/notice/notice",
+    "pages/logs/logs",
+    "pages/ceshi/ceshi",
+    "pages/speciallist/speciallist",
+    "pages/classlist/classlist",
+    "pages/worklist/worklist",
+    "pages/my/my",
+    "pages/self/self",
+    "pages/advice/advice"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "white",
+    "navigationBarTitleText": "学生工作管理",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#1296db",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的首页",
+        "iconPath": "./img/index0.png",
+        "selectedIconPath": "./img/index.png"
+      },
+      {
+        "pagePath": "pages/job/job",
+        "text": "工作分类",
+        "iconPath": "./img/job0.png",
+        "selectedIconPath": "./img/job.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的信息",
+        "iconPath": "./img/seach0.png",
+        "selectedIconPath": "./img/seach.png"
+      },
+      {
+        "pagePath": "pages/notice/notice",
+        "text": "通知发布",
+        "iconPath": "./img/notice0.png",
+        "selectedIconPath": "./img/notice.png"
+      }
+    ]
+  },
+  "plugins": {
+    "smsvercode": {
+      "version": "1.0.1",
+      "provider": "wx47025434eb041672"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "通知发布",
+  "usingComponents": {
+    "i-icon": "../../iview/icon/index"
+  }
+}

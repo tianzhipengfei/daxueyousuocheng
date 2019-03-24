@@ -1,0 +1,2 @@
+/* pages/classlist/classlist.wxss */
+@import '../job/job.wxss';

@@ -1,0 +1,52 @@
+<!--pages/my/my.wxml-->
+<image id="top_bg" src="/img/bg.png "></image>
+<view id="avatar" bindtap='goto_self'>
+  <open-data type="userAvatarUrl"></open-data>
+</view>
+<open-data id="nickName" type="userNickName"></open-data>
+<view id="myNotice"> 我的通知 </view>
+<view wx:if="{{myNoticeList.length!=0}}" class='Notice'>
+  <view class='one-item' wx:for='{{myNoticeList}}' wx:key='{{index}}'  style='padding-bottom:20rpx;margin-bottom: 30rpx; border-bottom: 2rpx solid #ccc;'>
+    <view style='width:144rpx;text-align:center;padding-top:20rpx;'><image src='{{item.wx_pic}}' style='width: 75rpx; height: 75rpx; ' class='one-item-left'></image></view>
+    <view class='one-item-right'>
+      <view class='nickname'>{{item.wx_name}}</view>
+      <view class='content'>#<text style='font-weight: bold;'>{{item.n_title}}</text>#{{item.n_content}}</view>
+      <view class='photo-container' wx:if='{{item.n_pic.length}}'>
+          <!-- 图片点开可以预览 根据图片的多少可以自适应自动排列 -->
+          <image src="{{cell}}" style='width: 22vw; height: 22vw;' mode='scaleToFill' wx:for='{{item.n_pic}}' wx:for-item="cell" wx:for-index="cellindex" wx:key='{{cellindex}}' bindtap='previewImg' data-src='{{cell}}' data-n_id='{{item.n_id}}'></image>
+      </view>
+      <block><image src="/img/trash.png" style='width:30rpx; height:40rpx; margin-left: 70vw;' bindtap='deleteNotice' data-n_id = '{{item.n_id}}'></image></block>
+    </view>
+  </view>
+</view>
+<view id="tips" wx:else> 您还没有发通知哦 </view>
+<!-- <view wx:if="{{valid_flag}}" id="phone_wraper">
+  <input id="valid_input"> </input>
+  <view id="phone_button"> 确认 </view>
+</view> -->
+
+<view wx:if="{{valid_flag}}" id="phone_wraper">
+  <form bindsubmit="formSubmit">
+    <view class='flexrow'>
+      <view class='rowleft'>
+        手机号：</view>
+      <view class='rowmiddle'>
+        <input name='phonenumber' value='{{phonenumber}}' placeholder='输入手机号码' bindinput='bindphonenumber' type='number' maxlength='11' />
+      </view>    
+    </view>
+    <view class='flexrow'>
+      <view class='rowleft'>
+        验证码：</view>
+      <view class='rowmiddle_phone'>
+        <input name='vercode' placeholder='输入6位验证码' type='number' maxlength='6' />
+      </view>
+      <view class='rowright_phone geo' bindtap='getcode' disabled="{{disabled}}" style='color: {{color}};'>{{text}}</view>
+    </view>
+    <view class='btn'>
+      <button type='primary' form-type="submit">提交</button>
+    </view>
+  </form>
+</view>
+
+<!-- <smsvercode id="phone_wraper" bindformsubmit="valid_number" button-text="确认" /> -->
+

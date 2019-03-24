@@ -1,0 +1,166 @@
+.swiper-container {
+  height: 30vh;
+}
+
+.slide-item {
+  width: 100vw;
+  height: 30vh;
+}
+
+.slide-img {
+  width: 100%;
+  height: 100%;
+}
+
+.add-record {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+}
+
+.modal-record {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  width: 220px;
+  height: 250px;
+  /* border-radius: 20rpx; *//* box-sizing: border-box;
+      padding: 30rpx 0; */
+}
+
+.model {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  z-index: 9999;
+  width: 560rpx;
+  height: 340rpx;
+  background: white;
+  border-radius: 20rpx;
+}
+
+.modelTitle {
+  font-size: 30rpx;
+  text-align: center;
+  border-bottom: 2rpx solid rgb(237, 237, 237);
+  height: 76rpx;
+  line-height: 76rpx;
+}
+
+.modelBody {
+  font-size: 28rpx;
+  height: 156rpx;
+  line-height: 50rpx;
+  color: #000;
+  box-sizing: border-box;
+  padding: 30rpx;
+  border-bottom: 2rpx solid rgb(237, 237, 237);
+}
+
+.agree {
+  font-size: 36rpx;
+  line-height: 100rpx;
+  color: rgb(27, 186, 28);
+  background-color: #fff;
+}
+
+.agree::after {
+  border: none;
+}
+
+.record_list{
+  width: 750rpx;
+  height: 100%;
+}
+
+.record_wraper{
+  border-top: 1rpx #E1E2E5 solid;
+  width: 750rpx;
+  margin-bottom: 20rpx;
+}
+
+.title_wrapper{
+  width: 750rpx;
+  height: 70rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.arrow{
+  margin-top: 15rpx;
+  width:40rpx;
+  height: 40rpx;
+  margin-left: 30rpx;
+}
+
+.title{
+  height: 70rpx;
+  width: 620rpx;
+  margin-left: 10rpx;
+  line-height: 70rpx;
+  overflow: hidden;
+}
+
+.content_wrapper{
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.content{
+  width: 690rpx;
+}
+
+.button_wrapper{
+  margin-top: 30rpx;
+  margin-left: 400rpx;
+  width: 750rpx;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.edit{
+  width: 120rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #3B98EF;
+  text-align: center;
+  color: white;
+  border-radius: 3rpx;
+}
+
+.delete{
+  width: 120rpx;
+  height: 80rpx;
+  margin-left: 30rpx;
+  line-height: 80rpx;
+  background-color: #FDA328;
+  text-align: center;
+  color: white;
+  border-radius: 3rpx;
+}

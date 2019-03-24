@@ -1,0 +1,66 @@
+{
+	"description": "项目配置文件。",
+	"cloudfunctionRoot": "functions/",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.2",
+	"appid": "wx3a425921e1a3ef22",
+	"projectname": "%E5%A4%A7%E5%AD%A6%E6%9C%89%E6%89%80%E6%88%90%E5%AD%A6%E7%94%9F%E5%B7%A5%E4%BD%9C%E8%BE%85%E5%8A%A9%E7%B3%BB%E7%BB%9F",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 3,
+			"list": [
+				{
+					"id": 0,
+					"name": "worklist",
+					"pathName": "pages/worklist/worklist",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "advice",
+					"pathName": "pages/advice/advice",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "my",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "self",
+					"pathName": "pages/self/self",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

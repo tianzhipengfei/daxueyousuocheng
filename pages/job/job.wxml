@@ -1,0 +1,49 @@
+<!-- <view wx:for="{{list}}">
+  <view wx:if="{{index==0}}" style='height:1rem;border-bottom: 1rpx solid #D8D8D8;'>
+  </view>
+  <view class="kind-list-item-bd  kind-list-item-bd-show ">
+        <view class="navigator-box navigator-box-show ">
+            <navigator url="pages/{{page}}/{{page}}" class="navigator">
+              <image style='width:1.2em;height:1.2em;z-index: 999999' src='../../img/{{item.icon}}.png'></image>
+              <view class="navigator-text">{{item.name}}</view>
+              <view class="navigator-arrow"></view>
+            </navigator>
+        </view>
+  </view>
+  <view wx:if="{{index%2==1}}" class="qujian">
+  </view>
+  <view wx:if="{{(index%2==0)&(index!=(listLength-1))}}" style="border-bottom: 1rpx solid #D8D8D8;border-top: 1rpx solid #D8D8D8;height:1rem;">
+  </view>
+  <view wx:if="{{index==(listLength-1)}}" style="border-top: 1rpx solid #D8D8D8;height:1rem;"></view>
+</view> -->
+ 
+<view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+            <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+            <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+            <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                <icon type="clear" size="14"></icon>
+            </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+            <icon class="weui-icon-search" type="search" size="14"></icon>
+            <view class="weui-search-bar__text">搜索</view>
+        </label>
+    </view>
+    <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+</view>
+<!-- <view style='text-indent:2em;text-align:justify' style='box-sizing: border-box; padding: 20rpx 20rpx; text-indent: 58rpx;'>{{foreword}}</view> -->
+<view class="page__bd">
+    <view class="weui-grids">
+        <!-- <block wx:for="{{grids}}" wx:key="*this"> -->
+        <block wx:for="{{list}}">
+            <navigator url="/pages/worklist/worklist?id={{item.id}}" class="weui-grid" hover-class="weui-grid_active">
+                <image class="weui-grid__icon" src="../../img/{{item.icon}}.png" />
+                <view class="weui-grid__label">{{item.name}}</view>
+            </navigator>
+        </block> 
+    </view>
+</view>
+
+<view id="share"> 您的分享就是对作者最大的支持！ </view>

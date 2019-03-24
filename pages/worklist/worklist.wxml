@@ -1,0 +1,39 @@
+<!--pages/worklist/worklist.wxml-->
+<view class='modal-record' style='z-index: 9999' wx:if='{{showAdd}}'>
+  <view class='middle' style='background: #f7f7f7; border-radius: 20rpx; z-index: 9999999'>
+    <input class='title' style='width: 92%; height: 100rpx;background: #fff; margin-top: 20rpx;' placeholder='请输入标题' placeholder-style='' bindinput='inputTitle' value="{{currentTitle===null?'':currentTitle}}"></input>
+    <textarea class='content' style='width: 92%; height: 230rpx; background: #fff;' placeholder-style='' placeholder='请输入内容' bindinput='inputContent' value="{{currentContent===null?'':currentContent}}"></textarea>
+    <view class='button-area' style='height: 100rpx; width: 100%;display: flex; flex-direction: row; justify-content: space-around; align-items: center; border-bottom: 30rpx;'>
+      <button style='font-size: 28rpx;' bindtap='cancelAdd' wx:if='{{flag==1}}'>取消</button>
+      <button style='font-size: 28rpx;' bindtap='cancelEdit' wx:if='{{flag==0}}'>取消</button>
+
+      <button style='font-size: 28rpx; color: #56A4EF;' bindtap='yesAdd' wx:if='{{flag==1}}'>确定</button>
+      <button style='font-size: 28rpx; color: #56A4EF;' bindtap='yesEdit' wx:if='{{flag==0}}'>确定</button>
+    </view>
+  </view>
+</view>
+
+<image style='width:3rem;height:3rem;position:fixed;right:2rem;bottom:2rem;z-index:10;' bindtap='add' src='../../img/add.png' ></image>
+
+<block></block>
+<view class="record_list">
+
+  
+  <view wx:for="{{recordList}}" class="record_wraper">
+    <view class="title_wrapper">
+      <image class="arrow" src='/img/open.png' style='transform:rotate({{item.rotation}}deg);' data-id="{{index}}" wx:key="{{index}}" bindtap="click_arrow"/>
+      <view class="title" data-id="{{index}}" bindtap="click_arrow">
+        {{item.time}} {{item.title}}
+      </view>
+    </view>
+    <view class="content_wrapper" wx:if="{{item.rotation!=-90}}">
+      <view class="content"> {{item.content}} </view>
+      <view class="button_wrapper">
+        <view class="edit"> 编辑
+        </view>
+        <view class="delete" data-id="{{index}}" bindtap='delete_record'> 删除
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
